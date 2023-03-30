@@ -12,7 +12,8 @@ public class MenuController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(keyToHold))
+        //if (Input.GetKey(keyToHold))
+        if (InputBridge.Instance.StartButton)
         {
             heldTime += Time.deltaTime;
             if (heldTime >= holdTime && !keyHeld)

@@ -140,8 +140,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thumbPointer: {fileID: 8972700520969489077}
   trigger: {fileID: 4868165790589310888}
+  sideButtonLeft: {fileID: 4992092732302129351}
+  sideButtonRight: {fileID: 7272809642631627801}
+  menuButton: {fileID: 1846315796641945742}
+  systemButton: {fileID: 738778844123365645}
   maxRadius: 0.02
   maxHeight: 0.002
+  maxLow: 0.001
   moveSpeed: 2
 --- !u!1 &738778844123365645
 GameObject:
