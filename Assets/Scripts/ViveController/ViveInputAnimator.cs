@@ -1,7 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using BNG;
 using UnityEngine;
+
+public enum Side
+{
+    Right,
+    Left
+}
 
 public class ViveInputAnimator : MonoBehaviour
 {
@@ -16,6 +20,7 @@ public class ViveInputAnimator : MonoBehaviour
     public float maxHeight = 0.002f;
     public float maxLow = 0.001f;
     public float moveSpeed = 2.0f;
+    public Side side;
 
     private readonly float _maxRotation = -32.772f;
     private readonly Vector3 _maxPosition = new Vector3(0, -0.0263999999f, -0.0034f);
@@ -31,7 +36,7 @@ public class ViveInputAnimator : MonoBehaviour
 
     private void ShowTouchpadPoint()
     {
-        Vector2 inputDirection = InputBridge.Instance.RightThumbstickAxis;
+        Vector2 inputDirection = side == Side.Right ? InputBridge.Instance.RightThumbstickAxis : InputBridge.Instance.LeftThumbstickAxis;
 
         var position = thumbPointer.transform.localPosition;
         Vector3 newPosition = new Vector3(-inputDirection.x * maxRadius,
@@ -44,7 +49,7 @@ public class ViveInputAnimator : MonoBehaviour
 
     private void MoveTrigger()
     {
-        float inputProgress = InputBridge.Instance.RightTrigger;
+        float inputProgress = side == Side.Right ? InputBridge.Instance.RightTrigger : InputBridge.Instance.LeftTrigger;
 
         var eulerAngles = trigger.transform.localEulerAngles;
         eulerAngles = new Vector3(_maxRotation * inputProgress, eulerAngles.y, eulerAngles.z);
@@ -54,10 +59,10 @@ public class ViveInputAnimator : MonoBehaviour
 
     private void MoveButtons()
     {
-        GripButton(InputBridge.Instance.RightGrip == 1);
-        GripButton(InputBridge.Instance.RightGrip == 1);
+        GripButton(side == Side.Right ? InputBridge.Instance.RightGrip == 1 : InputBridge.Instance.LeftGrip == 1);
+        GripButton(side == Side.Right ? InputBridge.Instance.RightGrip == 1 : InputBridge.Instance.LeftGrip == 1);
         MoveButton(systemButton, InputBridge.Instance.BackButtonDown);
-        MoveButton(menuButton, InputBridge.Instance.StartButton);
+        MoveButton(menuButton, side == Side.Right ? InputBridge.Instance.StartButton : InputBridge.Instance.BackButton);
     }
 
     private void MoveButton(GameObject button, bool isPressed)
