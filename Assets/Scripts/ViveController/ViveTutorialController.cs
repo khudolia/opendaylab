@@ -7,7 +7,8 @@ public enum CurrentPart
     Side,
     Touchpad,
     Menu,
-    System
+    System,
+    None
 }
 
 public class ViveTutorialController : MonoBehaviour
@@ -22,11 +23,11 @@ public class ViveTutorialController : MonoBehaviour
 
     
     [Header("Settings")] 
-    public CurrentPart part;
+    public CurrentPart part = CurrentPart.None;
     public Material material1;
     public Material material2;
     
-    private CurrentPart _previousActivePart;
+    private CurrentPart _previousActivePart = CurrentPart.None;
     private GameObject _previousActiveObject;
     private float duration = 1f;
     

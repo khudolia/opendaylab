@@ -59,7 +59,7 @@ public class ViveInputAnimator : MonoBehaviour
 
     private void MoveButtons()
     {
-        GripButton(side == Side.Right ? InputBridge.Instance.RightGrip == 1 : InputBridge.Instance.LeftGrip == 1);
+        //GripButton(side == Side.Right ? InputBridge.Instance.RightGrip == 1 : InputBridge.Instance.LeftGrip == 1);
         GripButton(side == Side.Right ? InputBridge.Instance.RightGrip == 1 : InputBridge.Instance.LeftGrip == 1);
         MoveButton(systemButton, InputBridge.Instance.BackButtonDown);
         MoveButton(menuButton, side == Side.Right ? InputBridge.Instance.StartButton : InputBridge.Instance.BackButton);

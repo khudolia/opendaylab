@@ -1,17 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Helpers;
 using UnityEngine;
 
 public enum TutorialState
 {
+    None,
+    PressAllButtons,
     Walk,
     GrabObject,
     UseObject,
     Menu,
 }
 
-public class TutorialController : MonoBehaviour
+public class TutorialSequenceController : MonoBehaviour
 {
     public TutorialState state;
 
@@ -20,18 +20,21 @@ public class TutorialController : MonoBehaviour
     public GameObject useUI;
     public GameObject walkUI;
     public GameObject menuUI;
+    public GameObject allButtonsUI;
 
-    [Header("Grab Object part")] public GameObject objectToBeHeld;
-    
     private TutorialState _previousState;
     private GameObject _previousActivatedUI;
 
+    private PressAllButtonsStep _allButtonsStep;
     private void Start()
     {
+        _allButtonsStep = GetComponent<PressAllButtonsStep>();
+        
         grabUI.SetActive(false);
         useUI.SetActive(false);
         walkUI.SetActive(false);
         menuUI.SetActive(false);
+        allButtonsUI.SetActive(false);
     }
 
     void Update()
@@ -40,8 +43,8 @@ public class TutorialController : MonoBehaviour
         {
             switch (state)
             {
-                case TutorialState.Menu:
-                    StartMenuTutorial();
+                case TutorialState.PressAllButtons:
+                    StartAllButtonsTutorial();
                     break;
                 case TutorialState.Walk:
                     StartWalkTutorial();
@@ -52,12 +55,27 @@ public class TutorialController : MonoBehaviour
                 case TutorialState.UseObject:
                     StartUseTutorial();
                     break;
-
+                case TutorialState.Menu:
+                    StartMenuTutorial();
+                    break;
             }
 
             
             _previousState = state;
         }
+    }
+
+    private void StartAllButtonsTutorial()
+    {
+        _allButtonsStep.StartTutorial();
+        ActivateUI(allButtonsUI);    
+    }
+
+    public void FinishAllButtonsTutorial()
+    {
+        state = state.Next();
+
+        allButtonsUI.SetActive(false);
     }
 
     private void StartMenuTutorial()
