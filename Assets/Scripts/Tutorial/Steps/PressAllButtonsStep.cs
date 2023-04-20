@@ -17,7 +17,7 @@ public class PressAllButtonsStep : MonoBehaviour
     public GameObject controllerTutorialLeft;
     public GameObject controllerTutorialRight;
 
-    public SmoothLocomotion SmoothLocomotion;
+    public SmoothLocomotion smoothLocomotion;
 
     public Button currentState;
     private Button _previousState = Button.None;
@@ -56,7 +56,7 @@ public class PressAllButtonsStep : MonoBehaviour
     public void StartTutorial()
     {
         enabled = true;
-        SmoothLocomotion.enabled = false;
+        smoothLocomotion.enabled = false;
         currentState = Button.Trigger;
     }
 
@@ -106,7 +106,7 @@ public class PressAllButtonsStep : MonoBehaviour
         controllerTutorialLeft.SetActive(false);
         controllerTutorialRight.SetActive(false);
 
-        SmoothLocomotion.enabled = true;
+        smoothLocomotion.enabled = true;
         GetComponent<TutorialSequenceController>().FinishAllButtonsTutorial();
         enabled = false;
     }

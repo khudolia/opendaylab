@@ -7,6 +7,10 @@ public class MenuController : MonoBehaviour
 {
     public KeyCode keyToHold;
     public float holdTime = 3f;
+
+    public GameObject menuUI;
+    public SmoothLocomotion smoothLocomotion;
+
     private bool keyHeld = false;
     private float heldTime = 0f;
 
@@ -20,6 +24,8 @@ public class MenuController : MonoBehaviour
             {
                 keyHeld = true;
                 Debug.Log("You held down the " + keyToHold.ToString() + " key for at least " + holdTime + " seconds!");
+                menuUI.SetActive(!menuUI.activeSelf);
+                smoothLocomotion.enabled = !menuUI.activeSelf;
                 // insert your code to run here
             }
         }
