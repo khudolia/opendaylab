@@ -44,6 +44,7 @@ public class ViveTutorialController : MonoBehaviour
                     break;
                 case CurrentPart.Side:
                     ActivateObject(sideButtonLeft);
+                    ActivateObject(sideButtonRight);
                     break;
                 case CurrentPart.System:
                     ActivateObject(systemButton);
@@ -70,6 +71,9 @@ public class ViveTutorialController : MonoBehaviour
 
     private void DeactivateObject()
     {
+        if(_previousActivePart == CurrentPart.Side)
+            StartCoroutine(ChangeMaterial(sideButtonLeft, false));
+
         if(_previousActiveObject != null)
             StartCoroutine(ChangeMaterial(_previousActiveObject, false));
     }

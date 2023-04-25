@@ -13,6 +13,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuVisuals;
     public SmoothLocomotion smoothLocomotion;
     public ObjectResseter objectResseter;
+    public TutorialSequenceController tutorialSequenceController;
 
     private bool keyHeld = false;
     private bool isPause = false;
@@ -67,5 +68,16 @@ public class MenuController : MonoBehaviour
     public void ResetObjects()
     {
         objectResseter.ResetObjects();
+    }
+
+    public void StartTutorial()
+    {
+        Resume();
+        tutorialSequenceController.StartTutorial();
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

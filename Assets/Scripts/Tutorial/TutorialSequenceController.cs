@@ -65,6 +65,11 @@ public class TutorialSequenceController : MonoBehaviour
         }
     }
 
+    public void StartTutorial()
+    {
+        state = TutorialState.PressAllButtons;
+    }
+
     private void StartAllButtonsTutorial()
     {
         _allButtonsStep.StartTutorial();
