@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ungrappable
+  - NonSave
   layers:
   - Default
   - TransparentFX
