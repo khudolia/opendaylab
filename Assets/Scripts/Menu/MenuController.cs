@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour
     public SmoothLocomotion smoothLocomotion;
     public ObjectResseter objectResseter;
     public TutorialSequenceController tutorialSequenceController;
-
+    public BlurController blurController;
     private bool keyHeld = false;
     private bool isPause = false;
     private float heldTime = 0f;
@@ -50,6 +50,7 @@ public class MenuController : MonoBehaviour
         menuUI.SetActive(false);
         menuVisuals.SetActive(false);
         smoothLocomotion.enabled = true;
+        blurController.FadeOut();
     }
 
     public void Pause()
@@ -58,6 +59,7 @@ public class MenuController : MonoBehaviour
         menuUI.SetActive(true);
         menuVisuals.SetActive(true);
         smoothLocomotion.enabled = false;
+        blurController.FadeIn();
     }
 
     public void RestartGame()
