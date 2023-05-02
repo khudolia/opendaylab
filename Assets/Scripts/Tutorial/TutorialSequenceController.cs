@@ -26,15 +26,19 @@ public class TutorialSequenceController : MonoBehaviour
     private GameObject _previousActivatedUI;
 
     private PressAllButtonsStep _allButtonsStep;
+    private MoveStep _moveStep;
     private void Start()
     {
         _allButtonsStep = GetComponent<PressAllButtonsStep>();
+        _moveStep = GetComponent<MoveStep>();
         
         grabUI.SetActive(false);
         useUI.SetActive(false);
         walkUI.SetActive(false);
         menuUI.SetActive(false);
         allButtonsUI.SetActive(false);
+
+        StartTutorial();
     }
 
     void Update()
@@ -67,7 +71,7 @@ public class TutorialSequenceController : MonoBehaviour
 
     public void StartTutorial()
     {
-        state = TutorialState.PressAllButtons;
+        state = TutorialState.Walk;
     }
 
     private void StartAllButtonsTutorial()
@@ -79,7 +83,6 @@ public class TutorialSequenceController : MonoBehaviour
     public void FinishAllButtonsTutorial()
     {
         state = state.Next();
-
         allButtonsUI.SetActive(false);
     }
 
@@ -95,7 +98,14 @@ public class TutorialSequenceController : MonoBehaviour
 
     private void StartWalkTutorial()
     {
+        _moveStep.StartTutorial();
         ActivateUI(walkUI);    
+    }
+    
+    public void FinishWalkTutorial()
+    {
+        state = state.Next();
+        walkUI.SetActive(false);
     }
 
     private void StartUseTutorial()
