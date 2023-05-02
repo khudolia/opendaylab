@@ -93,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8900342713256701601}
   - component: {fileID: 7912478905691049615}
-  - component: {fileID: 1869134412534438630}
   m_Layer: 0
   m_Name: ViveController
   m_TagString: Untagged
@@ -155,27 +154,6 @@ MonoBehaviour:
   maxLow: 0.001
   moveSpeed: 2
   side: 0
---- !u!223 &1869134412534438630
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528836966422961384}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
-  m_TargetDisplay: 0
 --- !u!1 &738778844123365645
 GameObject:
   m_ObjectHideFlags: 0

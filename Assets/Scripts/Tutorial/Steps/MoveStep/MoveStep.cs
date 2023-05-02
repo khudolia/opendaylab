@@ -5,18 +5,9 @@ using UnityEngine;
 public class MoveStep : MonoBehaviour
 {
     public GameObject targetObject;
-
     public ArrowController arrow;
     
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == targetObject)
-        {
-            arrow.Hide();
-            FinishTutorial();
-        }
-    }
-
+ 
     public void StartTutorial()
     {
         enabled = true;

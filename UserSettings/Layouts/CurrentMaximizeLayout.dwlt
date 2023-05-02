@@ -88,7 +88,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -431,9 +431,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.9289091, y: 0.17598855, z: 2.545475}
+    m_Target: {x: -1.2168777, y: 1.60875, z: 1.456484}
     speed: 2
-    m_Value: {x: 1.9289091, y: 0.17598855, z: 2.545475}
+    m_Value: {x: -1.2168777, y: 1.60875, z: 1.456484}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -480,13 +480,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0955605, y: 0.08027459, z: -0.007617831, w: 0.9922848}
+    m_Target: {x: -0.029622832, y: 0.15206732, z: 0.004754218, w: 0.98806113}
     speed: 2
-    m_Value: {x: 0.09554794, y: 0.08026404, z: -0.0076168296, w: 0.9921543}
+    m_Value: {x: -0.03110037, y: 0.15203801, z: 0.0049817213, w: 0.9878726}
   m_Size:
-    m_Target: 0.6198293
+    m_Target: 0.8660254
     speed: 2
-    m_Value: 0.6198293
+    m_Value: 0.8660254
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1664,22 +1664,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets
+  - Assets/Prefabs
   m_LastFoldersGridSize: 58
   m_LastProjectPath: D:\Unity - Projekte\opendaylab
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 227b0000
-    m_LastClickedID: 31522
-    m_ExpandedIDs: 00000000227b0000247b0000267b0000287b00002a7b00002c7b00002e7b0000307b0000327b0000347b0000fc7f000000800000028000000480000000ca9a3b
+    m_SelectedIDs: 8c900000
+    m_LastClickedID: 37004
+    m_ExpandedIDs: 0000000026900000289000002a9000002c9000002e90000030900000329000003490000036900000389000003a9000003c90000088900000a890000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1707,7 +1707,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000227b0000247b0000267b0000287b00002a7b00002c7b00002e7b0000307b0000327b0000347b0000
+    m_ExpandedIDs: 0000000026900000289000002a9000002c9000002e90000030900000329000003490000036900000389000003a9000003c900000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1732,8 +1732,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: a2a4ffff
-    m_LastClickedInstanceID: -23390
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000dcc8000082cf0000a2cb000000000000
     m_RenameOverlay:
@@ -1811,8 +1811,8 @@ MonoBehaviour:
     y: 0
     width: 432
     height: 947
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -1849,21 +1849,21 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ec830000
-      m_LastClickedID: 33772
-      m_ExpandedIDs: 90a8ffffb6a9ffffb8a9ffff2efbffff7c8100003a82000052830000108500006685000094850000ac850000e6850000dc8600003c8700003e87000048870000d4870000f887000012880000168800001a8800001c88000020880000268800002888000030880000d088000020890000228900006c890000288a0000628a0000aa8b0000b88b0000188c00002c8e0000488e0000568e0000608e00009a8e00004a8f0000
+      scrollPos: {x: 0, y: 599}
+      m_SelectedIDs: 4c650100
+      m_LastClickedID: 91468
+      m_ExpandedIDs: 222bffff5c40ffff2efbffff5e7a00000c7b0000a664010060680100386a0100426a0100f26a0100f86a01000c6b0100146b0100166b01001a6b01002a6b01001a6c0100666c0100a46e0100507101005a71010094710100b8b50100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: ViveControllerTutorialRight
-        m_OriginalName: ViveControllerTutorialRight
+        m_Name: XR Rig Advanced
+        m_OriginalName: XR Rig Advanced
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 33148
+        m_UserData: 92920
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -1895,8 +1895,8 @@ MonoBehaviour:
     y: 0
     width: 463
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}

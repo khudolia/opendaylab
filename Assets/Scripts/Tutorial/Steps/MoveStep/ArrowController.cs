@@ -8,8 +8,7 @@ public class ArrowController : MonoBehaviour
 
     public float rotationSpeed = 5.0f;
     public float scaleSpeed = 1.0f;
-    public float maxScale = 2.0f;
-    
+
     private bool isScaling = false;
 
     void Update()
@@ -19,7 +18,7 @@ public class ArrowController : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
-    
+
     IEnumerator ScaleCoroutine(float targetScale)
     {
         isScaling = true;
@@ -35,24 +34,16 @@ public class ArrowController : MonoBehaviour
         transform.localScale = new Vector3(targetScale, targetScale, targetScale);
         isScaling = false;
     }
-    
+
     public void Show()
     {
-        gameObject.SetActive(true);
-        if (!isScaling)
-        {
-            StartCoroutine(ScaleCoroutine(1.0f));
-        }
+        gameObject.transform.parent.gameObject.SetActive(true);
+        StartCoroutine(ScaleCoroutine(.2f));
     }
 
-    public IEnumerator  Hide()
+    public void Hide()
     {
-        if (!isScaling)
-        {
-            gameObject.SetActive(true);
-            yield return StartCoroutine(ScaleCoroutine(0.0f));
-            gameObject.SetActive(false);
-
-        }
+        gameObject.transform.parent.gameObject.SetActive(true);
+        StartCoroutine(ScaleCoroutine(0.0f));
     }
 }
