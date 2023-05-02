@@ -17,8 +17,7 @@ public class ArrowController : MonoBehaviour
         // Rotate towards targetObject
         Vector3 direction = targetObject.transform.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
-        Quaternion yInvertedRotation = rotation * Quaternion.Euler(0, 180, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, yInvertedRotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
     
     IEnumerator ScaleCoroutine(float targetScale)
