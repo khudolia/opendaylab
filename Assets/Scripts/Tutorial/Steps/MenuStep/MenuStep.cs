@@ -16,6 +16,8 @@ public class MenuStep : MonoBehaviour
         ExitGame,
         Finish
     }
+    
+    [Header("UI")]
     public MenuController menuController;
     public GameObject menuUI;
     public GameObject openMenuInfo;
@@ -27,6 +29,17 @@ public class MenuStep : MonoBehaviour
 
     public GameObject buttonLeft;
     public GameObject buttonRight;
+
+    [Header("References")] 
+    public GameObject menuButton;
+    public GameObject resumeButton;
+    public GameObject resetButton;
+    public GameObject restartButton;
+    public GameObject startTutorialButton;
+    public GameObject exitButton;
+    
+    [Header("Controllers")]
+    public GameObject linePointer;
 
     private State _state;
     private State _previousState;
@@ -68,24 +81,35 @@ public class MenuStep : MonoBehaviour
             {
                 case State.OpenMenu:
                     ActivateUI(openMenuInfo);
+                    UpdateLine(menuButton, openMenuInfo);
                     break;
                 case State.Resume:
                     buttonLeft.SetActive(false);
                     buttonRight.SetActive(true);
                     ActivateUI(resumeInfo);
+                    UpdateLine(resumeButton, resumeInfo);
+
                     break;
                 case State.ResetObjects:
                     buttonLeft.SetActive(true);
                     ActivateUI(resetInfo);
+                    UpdateLine(resetButton, resetInfo);
+
                     break;
                 case State.RestartGame:
                     ActivateUI(restartInfo);
+                    UpdateLine(restartButton, restartInfo);
+
                     break;
                 case State.StartTutorial:
                     ActivateUI(startTutorialInfo);
+                    UpdateLine(startTutorialButton, startTutorialInfo);
+
                     break;
                 case State.ExitGame:
                     ActivateUI(exitInfo);
+                    UpdateLine(exitButton, exitInfo);
+
                     break;
                 case State.Finish:
                     FinishTutorial();
@@ -118,6 +142,8 @@ public class MenuStep : MonoBehaviour
         buttonLeft.SetActive(false);
         buttonRight.SetActive(false);
         
+        linePointer.SetActive(false);
+
         GetComponent<TutorialSequenceController>().FinishMenuTutorial();
         enabled = false;
     }
@@ -141,5 +167,13 @@ public class MenuStep : MonoBehaviour
             ui.SetActive(true);
         
         _previousActivatedUI = ui;
+    }
+
+    private void UpdateLine(GameObject o1, GameObject o2)
+    {
+        var linePointerController = linePointer.GetComponent<LinePointerController>();
+        
+        linePointerController.button = o1;
+        linePointerController.explanationText = o2;
     }
 }

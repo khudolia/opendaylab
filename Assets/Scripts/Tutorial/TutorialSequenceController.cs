@@ -75,7 +75,7 @@ public class TutorialSequenceController : MonoBehaviour
 
     public void StartTutorial()
     {
-        state = TutorialState.Menu;
+        state = TutorialState.PressAllButtons;
     }
 
     private void StartAllButtonsTutorial()
@@ -129,7 +129,7 @@ public class TutorialSequenceController : MonoBehaviour
             particle.SetActive(true);
 
         finishUI.SetActive(true);
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(5);
 
         foreach (var particle in particles)
             particle.SetActive(false);

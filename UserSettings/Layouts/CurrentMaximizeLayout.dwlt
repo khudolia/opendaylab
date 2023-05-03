@@ -431,9 +431,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.2168777, y: 1.60875, z: 1.456484}
+    m_Target: {x: 0.95258766, y: 1.1221355, z: 0.22225094}
     speed: 2
-    m_Value: {x: -1.2168777, y: 1.60875, z: 1.456484}
+    m_Value: {x: 0.95258766, y: 1.1221355, z: 0.22225094}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -480,13 +480,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.029622832, y: 0.15206732, z: 0.004754218, w: 0.98806113}
+    m_Target: {x: 0.037648838, y: -0.36630145, z: 0.014910073, w: 0.9297824}
     speed: 2
-    m_Value: {x: -0.03110037, y: 0.15203801, z: 0.0049817213, w: 0.9878726}
+    m_Value: {x: 0.037642974, y: -0.36624438, z: 0.01490775, w: 0.92963755}
   m_Size:
-    m_Target: 0.8660254
+    m_Target: 0.5050495
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 0.5050495
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -1614,14 +1614,14 @@ MonoBehaviour:
     y: 679
     width: 1025
     height: 268
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 9}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
   - {fileID: 9}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1664,22 +1664,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Resources/Materials
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Resources/Materials
   m_LastFoldersGridSize: 58
   m_LastProjectPath: D:\Unity - Projekte\opendaylab
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 8c900000
-    m_LastClickedID: 37004
-    m_ExpandedIDs: 0000000026900000289000002a9000002c9000002e90000030900000329000003490000036900000389000003a9000003c90000088900000a890000000ca9a3b
+    m_SelectedIDs: 6e900000
+    m_LastClickedID: 36974
+    m_ExpandedIDs: 00000000589000005a9000005c9000005e90000060900000629000006490000066900000689000006a9000006c9000006e900000daa2000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1707,7 +1707,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000026900000289000002a9000002c9000002e90000030900000329000003490000036900000389000003a9000003c900000
+    m_ExpandedIDs: 00000000589000005a9000005c9000005e90000060900000629000006490000066900000689000006a9000006c9000006e900000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1811,8 +1811,8 @@ MonoBehaviour:
     y: 0
     width: 432
     height: 947
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -1849,24 +1849,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 599}
-      m_SelectedIDs: 4c650100
-      m_LastClickedID: 91468
-      m_ExpandedIDs: 222bffff5c40ffff2efbffff5e7a00000c7b0000a664010060680100386a0100426a0100f26a0100f86a01000c6b0100146b0100166b01001a6b01002a6b01001a6c0100666c0100a46e0100507101005a71010094710100b8b50100
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 90bdfeff3877ffff06faffff2efbffffb07b0000fc7b0000d47e0000027f00004a800000ac800000b6800000428100006681000080810000888100008e8100009e8100008e820000da8200001885000026850000868500009a870000c4870000ce87000008880000b8880000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: XR Rig Advanced
-        m_OriginalName: XR Rig Advanced
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 92920
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
