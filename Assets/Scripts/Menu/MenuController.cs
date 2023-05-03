@@ -16,7 +16,7 @@ public class MenuController : MonoBehaviour
     public TutorialSequenceController tutorialSequenceController;
     public BlurController blurController;
     private bool keyHeld = false;
-    private bool isPause = false;
+    public bool isPause = false;
     private float heldTime = 0f;
 
     void FixedUpdate()

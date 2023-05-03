@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Helpers;
 using UnityEngine;
 
@@ -8,17 +10,18 @@ public enum TutorialState
     Walk,
     GrabObject,
     Menu,
+    Finish
 }
 
 public class TutorialSequenceController : MonoBehaviour
 {
     public TutorialState state;
 
-    [Header("States UI")]
-    public GameObject useUI;
+    [Header("States UI")] public GameObject useUI;
     public GameObject walkUI;
-    public GameObject menuUI;
     public GameObject allButtonsUI;
+    public GameObject finishUI;
+    public List<GameObject> particles;
 
     private TutorialState _previousState;
     private GameObject _previousActivatedUI;
@@ -26,16 +29,17 @@ public class TutorialSequenceController : MonoBehaviour
     private PressAllButtonsStep _allButtonsStep;
     private MoveStep _moveStep;
     private GrabAndUseObjectStep _grabAndUseObjectStep;
-    
+    private MenuStep _menuStep;
+
     private void Start()
     {
         _allButtonsStep = GetComponent<PressAllButtonsStep>();
         _moveStep = GetComponent<MoveStep>();
         _grabAndUseObjectStep = GetComponent<GrabAndUseObjectStep>();
-        
+        _menuStep = GetComponent<MenuStep>();
+
         useUI.SetActive(false);
         walkUI.SetActive(false);
-        menuUI.SetActive(false);
         allButtonsUI.SetActive(false);
 
         StartTutorial();
@@ -59,22 +63,25 @@ public class TutorialSequenceController : MonoBehaviour
                 case TutorialState.Menu:
                     StartMenuTutorial();
                     break;
+                case TutorialState.Finish:
+                    StartCoroutine(DisplayFinishMessage());
+                    break;
             }
 
-            
+
             _previousState = state;
         }
     }
 
     public void StartTutorial()
     {
-        state = TutorialState.GrabObject;
+        state = TutorialState.Menu;
     }
 
     private void StartAllButtonsTutorial()
     {
         _allButtonsStep.StartTutorial();
-        ActivateUI(allButtonsUI);    
+        ActivateUI(allButtonsUI);
     }
 
     public void FinishAllButtonsTutorial()
@@ -82,13 +89,13 @@ public class TutorialSequenceController : MonoBehaviour
         state = state.Next();
         allButtonsUI.SetActive(false);
     }
-    
+
     private void StartWalkTutorial()
     {
         _moveStep.StartTutorial();
-        ActivateUI(walkUI);    
+        ActivateUI(walkUI);
     }
-    
+
     public void FinishWalkTutorial()
     {
         state = state.Next();
@@ -97,7 +104,7 @@ public class TutorialSequenceController : MonoBehaviour
 
     private void StartGrabTutorial()
     {
-        ActivateUI(null);    
+        ActivateUI(null);
         _grabAndUseObjectStep.StartTutorial();
     }
 
@@ -108,17 +115,36 @@ public class TutorialSequenceController : MonoBehaviour
 
     private void StartMenuTutorial()
     {
-        ActivateUI(menuUI);    
+        _menuStep.StartTutorial();
+    }
+
+    public void FinishMenuTutorial()
+    {
+        state = state.Next();
+    }
+
+    private IEnumerator DisplayFinishMessage()
+    {
+        foreach (var particle in particles)
+            particle.SetActive(true);
+
+        finishUI.SetActive(true);
+        yield return new WaitForSeconds(8);
+
+        foreach (var particle in particles)
+            particle.SetActive(false);
+
+        finishUI.SetActive(false);
     }
 
     private void ActivateUI(GameObject ui)
     {
-        if(_previousActivatedUI != null)
+        if (_previousActivatedUI != null)
             _previousActivatedUI.SetActive(false);
-        
-        if(ui != null)
+
+        if (ui != null)
             ui.SetActive(true);
-        
+
         _previousActivatedUI = ui;
     }
 }

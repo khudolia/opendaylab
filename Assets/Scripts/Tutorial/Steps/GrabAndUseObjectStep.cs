@@ -25,6 +25,8 @@ public class GrabAndUseObjectStep : MonoBehaviour
     {
         grabUI.SetActive(false);
         useUI.SetActive(false);
+        enabled = false;
+
     }
 
     void Update()
@@ -70,6 +72,8 @@ public class GrabAndUseObjectStep : MonoBehaviour
 
     public void StartTutorial()
     {
+        enabled = true;
+
         _state = State.Grab;
         grabUI.SetActive(true);
         useUI.SetActive(false);
