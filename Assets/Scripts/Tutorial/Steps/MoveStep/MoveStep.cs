@@ -10,12 +10,14 @@ public class MoveStep : MonoBehaviour
  
     public void StartTutorial()
     {
+        targetObject.SetActive(true);
         enabled = true;
         arrow.Show();
     }
 
     public void FinishTutorial()
     {
+        targetObject.SetActive(false);
         GetComponent<TutorialSequenceController>().FinishWalkTutorial();
         enabled = false;
     }

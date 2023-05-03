@@ -7,7 +7,6 @@ public enum TutorialState
     PressAllButtons,
     Walk,
     GrabObject,
-    UseObject,
     Menu,
 }
 
@@ -16,7 +15,6 @@ public class TutorialSequenceController : MonoBehaviour
     public TutorialState state;
 
     [Header("States UI")]
-    public GameObject grabUI;
     public GameObject useUI;
     public GameObject walkUI;
     public GameObject menuUI;
@@ -27,12 +25,14 @@ public class TutorialSequenceController : MonoBehaviour
 
     private PressAllButtonsStep _allButtonsStep;
     private MoveStep _moveStep;
+    private GrabAndUseObjectStep _grabAndUseObjectStep;
+    
     private void Start()
     {
         _allButtonsStep = GetComponent<PressAllButtonsStep>();
         _moveStep = GetComponent<MoveStep>();
+        _grabAndUseObjectStep = GetComponent<GrabAndUseObjectStep>();
         
-        grabUI.SetActive(false);
         useUI.SetActive(false);
         walkUI.SetActive(false);
         menuUI.SetActive(false);
@@ -56,9 +56,6 @@ public class TutorialSequenceController : MonoBehaviour
                 case TutorialState.GrabObject:
                     StartGrabTutorial();
                     break;
-                case TutorialState.UseObject:
-                    StartUseTutorial();
-                    break;
                 case TutorialState.Menu:
                     StartMenuTutorial();
                     break;
@@ -71,7 +68,7 @@ public class TutorialSequenceController : MonoBehaviour
 
     public void StartTutorial()
     {
-        state = TutorialState.Walk;
+        state = TutorialState.GrabObject;
     }
 
     private void StartAllButtonsTutorial()
@@ -85,17 +82,7 @@ public class TutorialSequenceController : MonoBehaviour
         state = state.Next();
         allButtonsUI.SetActive(false);
     }
-
-    private void StartMenuTutorial()
-    {
-        ActivateUI(menuUI);    
-    }
-
-    private void StartGrabTutorial()
-    {
-        ActivateUI(grabUI);    
-    }
-
+    
     private void StartWalkTutorial()
     {
         _moveStep.StartTutorial();
@@ -108,9 +95,20 @@ public class TutorialSequenceController : MonoBehaviour
         walkUI.SetActive(false);
     }
 
-    private void StartUseTutorial()
+    private void StartGrabTutorial()
     {
-        ActivateUI(useUI);    
+        ActivateUI(null);    
+        _grabAndUseObjectStep.StartTutorial();
+    }
+
+    public void FinishGrabTutorial()
+    {
+        state = state.Next();
+    }
+
+    private void StartMenuTutorial()
+    {
+        ActivateUI(menuUI);    
     }
 
     private void ActivateUI(GameObject ui)
@@ -118,7 +116,9 @@ public class TutorialSequenceController : MonoBehaviour
         if(_previousActivatedUI != null)
             _previousActivatedUI.SetActive(false);
         
-        ui.SetActive(true);
+        if(ui != null)
+            ui.SetActive(true);
+        
         _previousActivatedUI = ui;
     }
 }
