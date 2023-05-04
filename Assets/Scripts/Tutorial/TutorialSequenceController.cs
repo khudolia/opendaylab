@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using Helpers;
+using Tutorial;
 using UnityEngine;
 
 public enum TutorialState
 {
     None,
     PressAllButtons,
+    Menu,
     Walk,
     GrabObject,
-    Menu,
     Finish
 }
 
@@ -23,6 +24,7 @@ public class TutorialSequenceController : MonoBehaviour
     public GameObject finishUI;
     public List<GameObject> particles;
 
+    [Header("Controllers")] public HandModelSelector handModelSelector;
     private TutorialState _previousState;
     private GameObject _previousActivatedUI;
 
@@ -30,6 +32,7 @@ public class TutorialSequenceController : MonoBehaviour
     private MoveStep _moveStep;
     private GrabAndUseObjectStep _grabAndUseObjectStep;
     private MenuStep _menuStep;
+
 
     private void Start()
     {
@@ -52,16 +55,18 @@ public class TutorialSequenceController : MonoBehaviour
             switch (state)
             {
                 case TutorialState.PressAllButtons:
+                    handModelSelector.SwapToControllers();
                     StartAllButtonsTutorial();
+                    break;
+                case TutorialState.Menu:
+                    StartMenuTutorial();
                     break;
                 case TutorialState.Walk:
                     StartWalkTutorial();
                     break;
                 case TutorialState.GrabObject:
+                    handModelSelector.SwapToHands();
                     StartGrabTutorial();
-                    break;
-                case TutorialState.Menu:
-                    StartMenuTutorial();
                     break;
                 case TutorialState.Finish:
                     StartCoroutine(DisplayFinishMessage());

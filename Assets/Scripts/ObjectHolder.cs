@@ -11,14 +11,10 @@ public class ObjectHolder : MonoBehaviour
     private Color lineColor = Color.yellow;
     private bool isRotating = false;
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
-    }
-
-    private void OnDrawGizmos()
-    {
         if (heldObject)
         {
             Gizmos.color = lineColor;
