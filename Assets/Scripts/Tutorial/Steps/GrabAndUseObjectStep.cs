@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GrabAndUseObjectStep : MonoBehaviour
 {
-    enum State
+    public enum State
     {
         None,
         Grab,
@@ -19,7 +19,7 @@ public class GrabAndUseObjectStep : MonoBehaviour
     public GameObject grabUI;
     public GameObject useUI;
 
-    private State _state = State.None;
+    public State state = State.None;
 
     private void Start()
     {
@@ -31,20 +31,20 @@ public class GrabAndUseObjectStep : MonoBehaviour
 
     void Update()
     {
-        if (_state == State.Grab)
+        if (state == State.Grab)
         {
             if (leftHand.PreviousHeldObject != null && leftHand.PreviousHeldObject.CompareTag("Wand"))
             {
-                _state = State.Use;
+                state = State.Use;
             }
 
             if (rightHand.PreviousHeldObject != null && rightHand.PreviousHeldObject.CompareTag("Wand"))
             {
-                _state = State.Use;
+                state = State.Use;
             }
         }
 
-        if (_state == State.Use)
+        if (state == State.Use)
         {
             if (!useUI.activeSelf)
             {
@@ -64,7 +64,7 @@ public class GrabAndUseObjectStep : MonoBehaviour
 
         if (leftHand.PreviousHeldObject == null && rightHand.PreviousHeldObject == null && !grabUI.activeSelf)
         {
-            _state = State.Grab;
+            state = State.Grab;
             grabUI.SetActive(true);
             useUI.SetActive(false);
         }
@@ -74,7 +74,7 @@ public class GrabAndUseObjectStep : MonoBehaviour
     {
         enabled = true;
 
-        _state = State.Grab;
+        state = State.Grab;
         grabUI.SetActive(true);
         useUI.SetActive(false);
     }

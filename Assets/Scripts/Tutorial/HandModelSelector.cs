@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BNG;
 using UnityEngine;
 
@@ -35,11 +36,20 @@ namespace Tutorial {
         List<Transform> rightHandModels = default;
         Transform activatedRightModel = default;
 
-        private void Start() {
+        private void Awake() {
             uiPoint = GetComponentInChildren<UIPointer>();
 
             CacheHandModels();
             ChangeHandsModel(DefaultHandsModel);
+        }
+
+        private void Update()
+        {
+            if (!rightHandModels[1].gameObject.activeSelf)
+            {
+                rightHandModels[1].gameObject.transform.position = transform.position;
+                leftHandModels[1].gameObject.transform.position = transform.position;
+            }
         }
 
         private void CacheHandModels() {

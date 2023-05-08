@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MenuStep : MonoBehaviour
 {
-    enum State
+    public enum State
     {
         None,
         OpenMenu,
@@ -41,7 +41,8 @@ public class MenuStep : MonoBehaviour
     [Header("Controllers")]
     public GameObject linePointer;
 
-    private State _state;
+    [Header("Settings")]
+    public State state;
     private State _previousState;
     private GameObject _previousActivatedUI;
 
@@ -70,14 +71,14 @@ public class MenuStep : MonoBehaviour
 
         if (_previousEnteredPauseMode != enteredPauseMode && enteredPauseMode)
         {
-            _state = State.Resume;
+            state = State.Resume;
 
             _previousEnteredPauseMode = enteredPauseMode;
         }
         
-        if (_state != _previousState)
+        if (state != _previousState)
         {
-            switch (_state)
+            switch (state)
             {
                 case State.OpenMenu:
                     ActivateUI(openMenuInfo);
@@ -117,14 +118,17 @@ public class MenuStep : MonoBehaviour
             }
 
             
-            _previousState = _state;
+            _previousState = state;
         }
     }
     
     public void StartTutorial()
     {
+        enabled = true;
+
         menuUI.SetActive(true);
-        _state = State.OpenMenu;
+        state = State.OpenMenu;
+        _previousState = State.None;
     }
 
     public void FinishTutorial()
@@ -146,16 +150,17 @@ public class MenuStep : MonoBehaviour
 
         GetComponent<TutorialSequenceController>().FinishMenuTutorial();
         enabled = false;
+        _previousEnteredPauseMode = false;
     }
 
     public void NextStep()
     {
-        _state = _state.Next();
+        state = state.Next();
     }
 
     public void PreviousStep()
     {
-        _state = _state.Previous();
+        state = state.Previous();
     }
     
     private void ActivateUI(GameObject ui)
@@ -171,6 +176,9 @@ public class MenuStep : MonoBehaviour
 
     private void UpdateLine(GameObject o1, GameObject o2)
     {
+        if(linePointer.activeSelf == false)
+            linePointer.SetActive(true);
+
         var linePointerController = linePointer.GetComponent<LinePointerController>();
         
         linePointerController.button = o1;

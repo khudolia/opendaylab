@@ -28,12 +28,14 @@ public class TutorialSequenceController : MonoBehaviour
     private TutorialState _previousState;
     private GameObject _previousActivatedUI;
 
+    [Header("Settings")] public bool autoStart = false;
+
     private PressAllButtonsStep _allButtonsStep;
     private MoveStep _moveStep;
     private GrabAndUseObjectStep _grabAndUseObjectStep;
     private MenuStep _menuStep;
 
-
+    private bool _isCanceled = false;
     private void Start()
     {
         _allButtonsStep = GetComponent<PressAllButtonsStep>();
@@ -45,11 +47,16 @@ public class TutorialSequenceController : MonoBehaviour
         walkUI.SetActive(false);
         allButtonsUI.SetActive(false);
 
-        StartTutorial();
+        handModelSelector.SwapToHands();
+
+        if(autoStart)
+            StartTutorial();
     }
 
     void Update()
     {
+        if(_isCanceled) return;
+        
         if (state != _previousState)
         {
             switch (state)
@@ -80,7 +87,23 @@ public class TutorialSequenceController : MonoBehaviour
 
     public void StartTutorial()
     {
+        _isCanceled = false;
         state = TutorialState.PressAllButtons;
+    }
+
+    public void CancelTutorial()
+    {
+        _isCanceled = true;
+        useUI.SetActive(false);
+        walkUI.SetActive(false);
+        allButtonsUI.SetActive(false);
+
+        _menuStep.FinishTutorial();
+        _moveStep.FinishTutorial();
+        _grabAndUseObjectStep.FinishTutorial();
+
+        handModelSelector.SwapToHands();
+        state = TutorialState.None;
     }
 
     private void StartAllButtonsTutorial()
