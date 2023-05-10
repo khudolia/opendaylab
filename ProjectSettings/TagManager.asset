@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ungrappable
   - NonSave
+  - Wand
   layers:
   - Default
   - TransparentFX
