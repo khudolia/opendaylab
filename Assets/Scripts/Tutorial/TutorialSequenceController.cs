@@ -84,7 +84,7 @@ public class TutorialSequenceController : MonoBehaviour
     public void StartTutorial()
     {
         _isCanceled = false;
-        state = TutorialState.Walk;
+        state = TutorialState.PressAllButtons;
     }
 
     public void CancelTutorial()

@@ -6,6 +6,7 @@ using UnityEngine;
 public class MoveStep : MonoBehaviour
 {
     public GameObject walkUI;
+    public GameObject walkArrowObject;
 
     public GameObject targetObject;
     public ArrowController arrow;
@@ -13,6 +14,7 @@ public class MoveStep : MonoBehaviour
     private void Start()
     {
         walkUI.SetActive(false);
+        walkArrowObject.SetActive(false);
         enabled = false;
     }
 
@@ -20,6 +22,7 @@ public class MoveStep : MonoBehaviour
     {
         targetObject.SetActive(true);
         walkUI.SetActive(true);
+        walkArrowObject.SetActive(true);
         enabled = true;
         arrow.Show();
     }
@@ -28,6 +31,7 @@ public class MoveStep : MonoBehaviour
     {
         targetObject.SetActive(false);
         walkUI.SetActive(false);
+        walkArrowObject.SetActive(false);
         GetComponent<TutorialSequenceController>().FinishWalkTutorial();
         enabled = false;
     }
