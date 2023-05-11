@@ -24,4 +24,12 @@ public class TutorialLauncher : MonoBehaviour
 
         _isGoingOn = !_isGoingOn;
     }
+
+    public void StartTutorialOnlyOnce()
+    {
+        if(!_isGoingOn)
+            _tutorialSequenceController.StartTutorial();
+
+        _isGoingOn = true;
+    }
 }

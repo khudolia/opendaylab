@@ -114,12 +114,16 @@ namespace wands.grab
 
         private void ControlSelect(GameObject gameObject, SelectableType type)
         {
-            if (gameObject == null || gameObject.GetComponent<Rigidbody>() == null) return;
+            // Removed due to materials overlapping on some objects.
+            //
+            // Need to be fixed in the future
+            // 
+           /* if (gameObject == null || gameObject.GetComponent<Rigidbody>() == null) return;
 
             if (gameObject.GetComponent<Selectable>() == null)
                 gameObject.AddComponent<Selectable>();
 
-            gameObject.GetComponent<Selectable>().UpdateStatus(type);
+            gameObject.GetComponent<Selectable>().UpdateStatus(type);*/
         }
 
         private void SetTargetObjectPointDistance(float position)

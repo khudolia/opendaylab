@@ -7,6 +7,7 @@ public class MoveStep : MonoBehaviour
 {
     public GameObject walkUI;
     public GameObject walkArrowObject;
+    public GameObject controllerTutorial;
 
     public GameObject targetObject;
     public ArrowController arrow;
@@ -15,6 +16,7 @@ public class MoveStep : MonoBehaviour
     {
         walkUI.SetActive(false);
         walkArrowObject.SetActive(false);
+        controllerTutorial.SetActive(false);
         enabled = false;
     }
 
@@ -23,6 +25,7 @@ public class MoveStep : MonoBehaviour
         targetObject.SetActive(true);
         walkUI.SetActive(true);
         walkArrowObject.SetActive(true);
+        controllerTutorial.SetActive(true);
         enabled = true;
         arrow.Show();
     }
@@ -32,6 +35,7 @@ public class MoveStep : MonoBehaviour
         targetObject.SetActive(false);
         walkUI.SetActive(false);
         walkArrowObject.SetActive(false);
+        controllerTutorial.SetActive(false);
         GetComponent<TutorialSequenceController>().FinishWalkTutorial();
         enabled = false;
     }
