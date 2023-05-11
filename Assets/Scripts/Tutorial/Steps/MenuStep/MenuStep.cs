@@ -16,9 +16,9 @@ public class MenuStep : MonoBehaviour
         ExitGame,
         Finish
     }
-    
+
     [Header("UI")]
-    public MenuController menuController;
+    public GameObject panel;
     public GameObject menuUI;
     public GameObject openMenuInfo;
     public GameObject resetInfo;
@@ -37,9 +37,11 @@ public class MenuStep : MonoBehaviour
     public GameObject restartButton;
     public GameObject startTutorialButton;
     public GameObject exitButton;
+    public GameObject menuGlowButton;
     
     [Header("Controllers")]
     public GameObject linePointer;
+    public MenuController menuController;
 
     [Header("Settings")]
     public State state;
@@ -58,6 +60,7 @@ public class MenuStep : MonoBehaviour
         restartInfo.SetActive(false);
         startTutorialInfo.SetActive(false);
         exitInfo.SetActive(false);
+        panel.SetActive(false);
         
         buttonLeft.SetActive(false);
         buttonRight.SetActive(false);
@@ -82,10 +85,15 @@ public class MenuStep : MonoBehaviour
             switch (state)
             {
                 case State.OpenMenu:
+                    panel.SetActive(true);
+                    menuGlowButton.SetActive(true);
+                    menuButton.SetActive(false);
                     ActivateUI(openMenuInfo);
                     UpdateLine(menuButton, openMenuInfo);
                     break;
                 case State.Resume:
+                    menuGlowButton.SetActive(false);
+                    menuButton.SetActive(true);
                     buttonLeft.SetActive(false);
                     buttonRight.SetActive(true);
                     ActivateUI(resumeInfo);
@@ -143,6 +151,7 @@ public class MenuStep : MonoBehaviour
         restartInfo.SetActive(false);
         startTutorialInfo.SetActive(false);
         exitInfo.SetActive(false);
+        panel.SetActive(false);
         
         buttonLeft.SetActive(false);
         buttonRight.SetActive(false);

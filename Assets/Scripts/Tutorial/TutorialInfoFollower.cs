@@ -17,7 +17,9 @@ public class TutorialInfoFollower : MonoBehaviour
 
         Vector3 cameraForward = cameraTransform.TransformDirection(Vector3.forward);
         Vector3 targetPosition = cameraTransform.position + (cameraForward * distanceToMove);
-        targetObject.transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * speed);
+
+        Vector3 lockYPosition = new Vector3(targetPosition.x, targetObject.transform.position.y, targetPosition.z);
+        targetObject.transform.position = Vector3.Lerp(transform.position, lockYPosition, Time.deltaTime * speed);
 
 
         // smoothly rotate the object towards the target rotation

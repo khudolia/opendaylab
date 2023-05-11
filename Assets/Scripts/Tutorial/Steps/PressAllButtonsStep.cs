@@ -14,6 +14,8 @@ public enum Button
 
 public class PressAllButtonsStep : MonoBehaviour
 {
+    public GameObject allButtonsUI;
+
     public GameObject controllerTutorialLeft;
     public GameObject controllerTutorialRight;
 
@@ -26,6 +28,7 @@ public class PressAllButtonsStep : MonoBehaviour
     {
         controllerTutorialLeft.SetActive(false);
         controllerTutorialRight.SetActive(false);
+        allButtonsUI.SetActive(false);
         enabled = false;
 
     }
@@ -58,6 +61,11 @@ public class PressAllButtonsStep : MonoBehaviour
         enabled = true;
         smoothLocomotion.enabled = false;
         currentState = Button.Trigger;
+        
+        
+        allButtonsUI.SetActive(true);
+        controllerTutorialLeft.SetActive(true);
+        controllerTutorialRight.SetActive(true);
     }
 
     private void TriggerButton()
@@ -105,6 +113,7 @@ public class PressAllButtonsStep : MonoBehaviour
     {
         controllerTutorialLeft.SetActive(false);
         controllerTutorialRight.SetActive(false);
+        allButtonsUI.SetActive(false);
 
         smoothLocomotion.enabled = true;
         GetComponent<TutorialSequenceController>().FinishAllButtonsTutorial();

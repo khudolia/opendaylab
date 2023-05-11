@@ -44,7 +44,6 @@ public class MenuController : MonoBehaviour
 
     public void Resume()
     {
-        print("resume");
         isPause = false;
         
         menuUI.SetActive(false);
@@ -55,7 +54,6 @@ public class MenuController : MonoBehaviour
 
     public void Pause()
     {
-        print("pause");
 
         isPause = true;
         menuUI.SetActive(true);
