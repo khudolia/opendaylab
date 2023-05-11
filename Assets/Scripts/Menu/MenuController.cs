@@ -21,16 +21,15 @@ public class MenuController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if (Input.GetKey(keyToHold))
-        if (InputBridge.Instance.StartButton && !isPause)
+        if (InputBridge.Instance.StartButton)
         {
             heldTime += Time.deltaTime;
             if (heldTime >= holdTime && !keyHeld)
             {
                 keyHeld = true;
-                Debug.Log("You held down the " + keyToHold.ToString() + " key for at least " + holdTime + " seconds!");
 
-                if (!isPause)
+                isPause = !isPause;
+                if (isPause)
                     Pause();
                 else
                     Resume();
@@ -45,6 +44,7 @@ public class MenuController : MonoBehaviour
 
     public void Resume()
     {
+        print("resume");
         isPause = false;
         
         menuUI.SetActive(false);
@@ -55,6 +55,8 @@ public class MenuController : MonoBehaviour
 
     public void Pause()
     {
+        print("pause");
+
         isPause = true;
         menuUI.SetActive(true);
         menuVisuals.SetActive(true);
@@ -70,6 +72,7 @@ public class MenuController : MonoBehaviour
     public void ResetObjects()
     {
         objectResseter.ResetObjects();
+        Resume();
     }
 
     public void StartTutorial()

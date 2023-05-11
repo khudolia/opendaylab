@@ -45,13 +45,6 @@ public class BlurController : MonoBehaviour
         material.SetFloat("_Smoothness", smoothnessTarget);
         if(!reverseDirection)
             gameObject.SetActive(false);
-
-        // If the direction is reversed, swap the start and target values and animate again
-        /*if (reverseDirection)
-        {
-            (smoothnessStart, smoothnessTarget) = (smoothnessTarget, smoothnessStart);
-            StartCoroutine(AnimateSmoothness());
-        }*/
     }
 
     private void StartAnim()
@@ -61,7 +54,9 @@ public class BlurController : MonoBehaviour
         smoothnessStart = material.GetFloat("_Smoothness");
        
         smoothnessTarget = reverseDirection ? smoothnessMin : smoothnessMax;
-        StartCoroutine(AnimateSmoothness());
+        
+        if(gameObject.activeSelf)
+            StartCoroutine(AnimateSmoothness());
     }
     
     public void FadeIn()

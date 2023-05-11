@@ -62,6 +62,7 @@ public class MenuStep : MonoBehaviour
         buttonLeft.SetActive(false);
         buttonRight.SetActive(false);
 
+        enabled = false;
     }
 
     // Update is called once per frame
@@ -149,8 +150,9 @@ public class MenuStep : MonoBehaviour
         linePointer.SetActive(false);
 
         GetComponent<TutorialSequenceController>().FinishMenuTutorial();
-        enabled = false;
+        
         _previousEnteredPauseMode = false;
+        enabled = false;
     }
 
     public void NextStep()
