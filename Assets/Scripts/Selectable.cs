@@ -47,7 +47,7 @@ public class Selectable : MonoBehaviour
     private void _UnselectObject()
     {
         _controller.isVisible = false;
-        _controller.outlineColor = Dimens.OutlineHoverColor.WithAlpha(.0f);
+       // _controller.outlineColor = Dimens.OutlineHoverColor.WithAlpha(.0f);
     }
 
     private void _checkOutlineScript()
