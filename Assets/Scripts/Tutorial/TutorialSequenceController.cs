@@ -8,7 +8,7 @@ public enum TutorialState
 {
     None,
     PressAllButtons,
-    Menu,
+    //Menu,
     Walk,
     GrabObject,
     Finish
@@ -61,9 +61,9 @@ public class TutorialSequenceController : MonoBehaviour
                     handModelSelector.SwapToControllers();
                     StartAllButtonsTutorial();
                     break;
-                case TutorialState.Menu:
-                    StartMenuTutorial();
-                    break;
+                // case TutorialState.Menu:
+                //     StartMenuTutorial();
+                //     break;
                 case TutorialState.Walk:
                     StartWalkTutorial();
                     break;
