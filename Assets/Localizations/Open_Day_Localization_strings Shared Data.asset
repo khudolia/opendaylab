@@ -75,6 +75,34 @@ MonoBehaviour:
     m_Key: TUTORIAL_ALL_BUTTONS
     m_Metadata:
       m_Items: []
+  - m_Id: 29126802841600
+    m_Key: MENU_DEBUG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29455921487872
+    m_Key: MENU_RESUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29622368247808
+    m_Key: MENU_OBJECT_POSITIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29930112720896
+    m_Key: MENU_RESTART
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30195230482432
+    m_Key: MENU_START_TUTORIAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30431856336896
+    m_Key: MENU_EXIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37194248790016
+    m_Key: LANGUAGE_MENU_HEADER
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

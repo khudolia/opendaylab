@@ -96,6 +96,34 @@ MonoBehaviour:
     m_Localized: Press the following buttons to proccess
     m_Metadata:
       m_Items: []
+  - m_Id: 29126802841600
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29455921487872
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29622368247808
+    m_Localized: Objects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29930112720896
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30195230482432
+    m_Localized: Start tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30431856336896
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37194248790016
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -87,6 +87,34 @@ MonoBehaviour:
     m_Localized: "Dr\xFCcken Sie die folgenden Tasten, um den Vorgang auszuf\xFChren"
     m_Metadata:
       m_Items: []
+  - m_Id: 29126802841600
+    m_Localized: "Men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29455921487872
+    m_Localized: Fortsetzen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29622368247808
+    m_Localized: Objekte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29930112720896
+    m_Localized: Neustart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30195230482432
+    m_Localized: Tutorial starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30431856336896
+    m_Localized: Beenden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37194248790016
+    m_Localized: Sprache
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

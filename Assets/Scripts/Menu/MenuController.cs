@@ -11,6 +11,8 @@ public class MenuController : MonoBehaviour
 
     public GameObject menuUI;
     public GameObject menuVisuals;
+
+    public GameObject languageVisual;
     public SmoothLocomotion smoothLocomotion;
     public ObjectResseter objectResseter;
     public TutorialSequenceController tutorialSequenceController;
@@ -83,4 +85,19 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ChangeLanguage()
+    {
+        
+        menuVisuals.SetActive(false);
+        languageVisual.SetActive(true);
+    }
+
+    public void BackToMenu()
+    {
+        languageVisual.SetActive(false);
+        menuVisuals.SetActive(true);
+
+    }
+    
 }
