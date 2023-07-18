@@ -305,6 +305,7 @@ MonoBehaviour:
   object1: {fileID: 4603718585061689405}
   object2: {fileID: 1748853120185154610}
   animationDuration: 0.2
+  VideoPlayer: {fileID: 0}
   delay: 5
 --- !u!1 &4603718585061689405
 GameObject:
@@ -685,7 +686,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.26, y: 0.1, z: 0.27}
+  m_Size: {x: 0.38, y: 0.1, z: 0.39}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8206034652673161534
 Rigidbody:

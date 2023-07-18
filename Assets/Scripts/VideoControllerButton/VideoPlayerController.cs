@@ -6,7 +6,8 @@ public class VideoPlayerController : MonoBehaviour
     private VideoPlayer _videoPlayer;
     private Transform _playerTransform;
     public float pauseDistance = 5.0f; // Adjust this value based on your requirements
-
+    public VideoButtonController videoButtonController;
+    
     private bool isPlayerInRange = true;
 
     void Start()
@@ -31,12 +32,26 @@ public class VideoPlayerController : MonoBehaviour
         // Check if the player is within the pause distance.
         if (distance > pauseDistance)
         {
-            if (isPlayerInRange)
+            if (!_videoPlayer.isPaused)
             {
-                // Player moved out of range, so pause the video if it was playing.
                 _videoPlayer.Pause();
-                isPlayerInRange = false;
+                videoButtonController.ShowPlay();
             }
         }
+    }
+    
+    public void ToggleVideoPlayerState()
+    {
+        if (_videoPlayer.isPaused)
+        {
+            _videoPlayer.Play();
+            videoButtonController.ShowPause();
+        }
+        else
+        {
+            _videoPlayer.Pause();
+            videoButtonController.ShowPlay();
+        }
+
     }
 }

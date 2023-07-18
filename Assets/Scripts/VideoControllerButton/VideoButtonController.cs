@@ -33,30 +33,23 @@ public class VideoButtonController : MonoBehaviour
         _delay -= Time.deltaTime;
         _delay = Mathf.Clamp(_delay, .0f, Single.MaxValue);
     }
-    
-    // Call this method to trigger the visibility change with animation
-    public void ToggleObjectsVisibility()
+
+    public void ShowPlay()
     {
-        if (isAnimating && _delay != 0)
-            return;
-
-        isAnimating = true;
-        isActive = !isActive;
-        
-        StartCoroutine(AnimateObjectVisibility(object1, originalScale1));
-        StartCoroutine(AnimateObjectVisibility(object2, originalScale2));
-        
-        if(isActive)
-            VideoPlayer.Play();
-        else
-            VideoPlayer.Pause();
-
+        StartCoroutine(AnimateObjectVisibility(true, object1, originalScale1));
+        StartCoroutine(AnimateObjectVisibility(false, object2, originalScale2));
     }
 
-    private IEnumerator AnimateObjectVisibility(GameObject targetObject, Vector3 originalScale)
+    public void ShowPause()
+    {
+        StartCoroutine(AnimateObjectVisibility(false, object1, originalScale1));
+        StartCoroutine(AnimateObjectVisibility(true, object2, originalScale2));
+    }
+
+    private IEnumerator AnimateObjectVisibility(bool isEnable, GameObject targetObject, Vector3 originalScale)
     {
         Vector3 startScale = targetObject.transform.localScale;
-        Vector3 targetScale = targetObject.activeInHierarchy ? Vector3.zero : originalScale;
+        Vector3 targetScale = !isEnable ? Vector3.zero : originalScale;
         float elapsedTime = 0f;
 
         while (elapsedTime < animationDuration)
@@ -71,7 +64,7 @@ public class VideoButtonController : MonoBehaviour
         targetObject.transform.localScale = targetScale;
 
         // Toggle the object's visibility after the animation is completed
-        targetObject.SetActive(!targetObject.activeInHierarchy);
+        targetObject.SetActive(isEnable);
 
         isAnimating = false;
         _delay = delay;
