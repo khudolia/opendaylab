@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Open_Day_Localization_strings_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 9d72dad3eed0a3441a4c5610c2455d92, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1403149656064
+    m_Localized: "Halten Sie diese Taste gedr\xFCckt, um das Men\xFC zu \xF6ffnen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681125388288
+    m_Localized: "Diese Schaltfl\xE4che ist f\xFCr das Fortsetzen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12189850968064
+    m_Localized: "Diese Schaltfl\xE4che dient zum Zur\xFCcksetzen der Objektpositionen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12323670237184
+    m_Localized: Diese Taste dient zum Neustart des Spiels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12493287890944
+    m_Localized: "Hier k\xF6nnen Sie das Tutorial neu starten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12746187644928
+    m_Localized: "Diese Schaltfl\xE4che dient zum Beenden des Spiels"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12979760046080
+    m_Localized: "Herzlichen Gl\xFCckwunsch! Sie haben das Tutorial beendet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13828888502272
+    m_Localized: "Escape A Room: Beliebte Escape Abenteuer auf einer neuen Ebene.\nErweiterung
+      des normalen Raums um virtuelle R\xE4tsel und Puzzel.\nL\xF6se unter Zeitdruck
+      spannende F\xE4lle und erlebe eine andere Dimension."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14458940071936
+    m_Localized: "Virtual Canvas\nAnwendung, die es dem Benutzer in der virtuellen
+      Realit\xE4t erm\xF6glicht, mit einem HTC Vive Controller, der als virtueller
+      Pinsel fungiert, auf eine virtuelle, zweidimensionale Leinwand zu zeichnen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14808510144512
+    m_Localized: "CARdgame\nEin Kartenspiel in AR welches auf der HoloLens 2 l\xE4uft.
+      Angelehnt an YuGiOh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15809203970048
+    m_Localized: "(dr\xFCcken Sie nicht die Men\xFCtasten)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17051825250304
+    m_Localized: "Folgen Sie dem Pfeil zu dem orangefarbenen Kreis.\nVerwenden Sie
+      dazu den gro\xDFen Kreis auf der linken Seite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17325532946432
+    m_Localized: "Richte deine rechte Hand auf den Zauberstab, bis der Kreis seine
+      Farbe in Orange \xE4ndert. Und dann greifen sie durch Dr\xFCcken der Tasten
+      auf der Seite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17556848812032
+    m_Localized: "Drehen Sie sich nun um, richten Sie den Zauberstab auf das Sofa
+      und dr\xFCcken Sie den Ausl\xF6ser mit dem Zeigefinger."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17951419572224
+    m_Localized: "Dr\xFCcken Sie die folgenden Tasten, um den Vorgang auszuf\xFChren"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
