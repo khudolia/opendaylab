@@ -72,7 +72,7 @@ namespace outline
             // Destroy material instances
             DestroyImmediate(outlineMaskMaterial);
             DestroyImmediate(outlineFillMaterial);
-            DestroyImmediate(gameObject.GetComponent<OutlineController>());
+            Destroy(gameObject.GetComponent<OutlineController>());
         }
 
         void UpdateMaterialProperties()
