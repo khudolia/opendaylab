@@ -86,16 +86,20 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
+    // Change visibility of Menu and show language Menu
     public void ChangeLanguage()
     {
         
         menuVisuals.SetActive(false);
+        menuUI.SetActive(false);
         languageVisual.SetActive(true);
     }
 
+    // going back to main Menu
     public void BackToMenu()
     {
         languageVisual.SetActive(false);
+        menuUI.SetActive(true);
         menuVisuals.SetActive(true);
 
     }
